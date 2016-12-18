@@ -209,68 +209,6 @@ public class golden_egale_conversions {
         System.out.printf("\nIt will cost you %d eagles\n\n", grand_total);
 }
     
-    public static void ge_cost(int ge){
-        Scanner in = new Scanner(System.in);
-        int ge_o1 = 150;        //Package 1
-        int ge_c1 = 1;          
-        int ge_o2 = 500;        //Package 2
-        int ge_c2 = 3;
-        int ge_o3 = 1000;       //Package 3
-        int ge_c3 = 6;
-        int ge_o4 = 2500;       //Package 4
-        int ge_c4 = 14;
-        int ge_o5 = 5000;       //Package 5
-        int ge_c5 = 25;
-        int ge_o6 = 10000;      //Package 6
-        int ge_c6 = 49;
-        int ge_o7 = 15000;      //Package 7
-        int ge_c7 = 72;
-        int ge_o8 = 20000;      //Package 8
-        int ge_c8 = 95;
-        int ge_o9 = 25000;      //Package 9
-        int ge_c9 = 115;
-    
-        System.out.printf("What option do you intend to pay for the Golden Eagles?: ");
-        int ge_payment_option = in.nextInt();
-        int grand_total = 0;
-        if(ge_payment_option == 1){
-            grand_total = ge * ge_c1;
-        }
-        else if(ge_payment_option == 2){
-            int multiplyer = (int)Math.round(ge / ge_o2);
-            grand_total = multiplyer * ge_c2;
-        }
-        else if(ge_payment_option == 3){
-            int multiplyer = (int)Math.round(ge / ge_o3);
-            grand_total = multiplyer * ge_c3;
-        }
-        else if(ge_payment_option == 4){
-            int multiplyer = (int)Math.round(ge / ge_o4);
-            grand_total = multiplyer * ge_c4;
-        }
-        else if(ge_payment_option == 5){
-            int multiplyer = (int)Math.round(ge / ge_o5);
-            grand_total = multiplyer * ge_c5;
-        }
-        else if(ge_payment_option == 6){
-            int multiplyer = (int)Math.round(ge / ge_o6);
-            grand_total = multiplyer * ge_c6;
-        }
-        else if(ge_payment_option == 7){
-            int multiplyer = (int)Math.round(ge / ge_o7);
-            grand_total = multiplyer * ge_c7;
-        }
-        else if(ge_payment_option == 8){
-            int multiplyer = (int)Math.round(ge / ge_o8);
-            grand_total = multiplyer * ge_c8;
-        }
-        else if(ge_payment_option == 9){
-            int multiplyer = (int)Math.round(ge / ge_o9);
-            grand_total = multiplyer * ge_c9;
-        }
-        System.out.printf("Your grand total is $%d", grand_total);
-}
-    
     public static void main(String[] args) {
         boolean stop = true;
         while(stop == true){
