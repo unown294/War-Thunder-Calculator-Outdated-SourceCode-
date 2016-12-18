@@ -287,10 +287,10 @@ public class golden_egale_conversions {
         boolean stop = true;
         while(stop == true){
             Scanner in = new Scanner(System.in);
-            System.out.printf("Please select the option you want to be using:\n[1].Experience conversions\n[2].Silver Lions\n[3].Premium Membership Pass\n[4].Convert Golden Eagle to Real Money\n[5].Research Point battle average calculator\n[6].Purchase Cost Calulator\n[7].Lowest possible ammount you need to pay for lions\n[8].Golden Eagle lowest calculator into dollars\n[q].Quit (Is case sensitive)\nPlease Enter response here: ");
+            System.out.printf("Please select the option you want to be using:\n[1].Experience conversions\n[2].Silver Lions\n[3].Premium Membership Pass\n[4].Convert Golden Eagle to Real Money\n[5].Research Point battle average calculator\n[6].Purchase Cost Calulator\n[7].Lowest possible ammount you need to pay for lions\n[8].Golden Eagle lowest calculator into dollars\n[Q].Quit \nPlease Enter response here: ");
             String response = in.next();
             response = response.toLowerCase();
-            if(response.equals("q")){
+            if(response.equals("q") || response.equals("Q")){
                 System.out.printf("Exiting...\n");
                 stop = false;
             }
