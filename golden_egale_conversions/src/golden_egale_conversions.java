@@ -382,7 +382,7 @@ public class golden_egale_conversions {
             else{
                 System.out.printf("\nPlease select a valid option\n\n");
             }
-    }
+        }
     
-}
+    }
 }
