@@ -191,7 +191,7 @@ public class golden_egale_conversions {
         int ge6 = 14900; // 365 day pass
         int ge_o6 = 365;
         //Below are the lines that have included logic to solve various methods of attaining said GE ammount.
-        System.out.printf("What option do you intend to pay for the membership?: ");
+        System.out.printf("What option do you intend to pay for the membership?(1-6): ");
         int ge_payment_option = in.nextInt();
         int grand_total = 0;
         if(ge_payment_option == 1){
@@ -280,7 +280,7 @@ public class golden_egale_conversions {
             int multiplyer = (int)Math.round(ge / ge_o9);
             grand_total = multiplyer * ge_c9;
         }
-        System.out.printf("Your grand total is $%d", grand_total);
+        System.out.printf("Your grand total is $%d", grand_total, "/n/n");
 }
     
     public static void main(String[] args) {
