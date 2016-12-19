@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 /**
  *
- * @author Dalton Redman, Dylan
+ * @author Dalton, Dylan
  * AKA: Unown294, jeff_fan
  */
 public class golden_egale_conversions {
