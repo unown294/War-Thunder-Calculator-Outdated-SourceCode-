@@ -1,18 +1,3 @@
-/*
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
@@ -49,6 +34,7 @@ public class golden_egale_conversions {
     }
     
     public static void silver_lion(int lions_needed){
+        int nu = 0;
         int sl = 1000;        // Silver lions pack 1
         int sl2 = 11000;      // Silver lions pack 2
         int sl3 = 58000;      // Silver lions pack 3
@@ -56,7 +42,10 @@ public class golden_egale_conversions {
         int sl5 = 630000;     // Silver lions pack 5
         int sl6 = 1300000;    // Silver lions pack 6
         int i = lions_needed;
-        if(i <= sl){
+        if(i < nu){
+            System.out.printf("\nWe recommend you go team kill a bunch of people to achieve this ammount and congrates on finding my easter egg\n\n");
+        }
+        else if(i >= nu && i <= sl){
             System.out.printf("\nWe recommend buying the %d for a better deal\n\n", sl);
         }
         else if(i <= sl2 && i > sl){
@@ -91,11 +80,11 @@ public class golden_egale_conversions {
         }
         else if( total_cost <= budget){
             int result = budget - total_cost;
-            System.out.printf("You will have (%d lions) to spare with your budget of %d lions\n", result, budget);
+            System.out.printf("You will have (%d lions) to spare with your budget of %d lions\n\n", result, budget);
         }
     }
     
-    public static void aircraft_rp_c(ArrayList<Integer> aircraft_rp, int air, int average_rp){   // For Option 5, For X amount of aircraft research point
+    public static void aircraft_rp_c(ArrayList<Integer> aircraft_rp, int air, int average_rp){   // For Option 4, For X amount of aircraft research point
         int total_rp = 0;
         for(int i = 0; i < aircraft_rp.size(); i++){
            total_rp = total_rp + aircraft_rp.get(i);
@@ -180,55 +169,40 @@ public class golden_egale_conversions {
 }
     
     public static void Membership(int days){
-        Scanner in = new Scanner(System.in);
-        int ge = 190;    // 1 day pass
-        int ge_o = 1;
-        int ge2 = 690;   // 7 day pass
-        int ge_o2 = 7;
-        int ge3 = 1190;  // 15 day pass
-        int ge_o3 = 15;
-        int ge4 = 1900;  // 30 day pass
-        int ge_o4 = 30;
-        int ge5 = 4900;  // 90 day pass
-        int ge_o5 = 90;
-        int ge6 = 14900; // 365 day pass
-        int ge_o6 = 365;
-        //Below are the lines that have included logic to solve various methods of attaining said GE ammount.
-        System.out.printf("What option do you intend to pay for the membership?: ");
-        int ge_payment_option = in.nextInt();
-        int grand_total = 0;
-        if(ge_payment_option == 1){
-            grand_total = days * ge;
+        int[] Membership_ammount = {365, 90, 30, 15, 7, 1};
+        int[] Membership_price = {14900, 4900, 1900, 1190, 690, 190};
+        int[] tally_ammount = {0,0,0,0,0,0};
+        int total_cost = 0;
+        for(int i = 0; i < Membership_ammount.length; i++){
+            if(days >= Membership_ammount[i]){
+                boolean test = true;
+                while(test){
+                    if(days >= Membership_ammount[i]){
+                        tally_ammount[i]++;
+                        days = days - Membership_ammount[i];
+                    }
+                    else{
+                        test = false;
+                    }
+                }
+                    
+            }
+            else{
+                
+            }
         }
-        else if(ge_payment_option == 2){
-            int multiplyer = (int)Math.round(days / ge_o2);
-            grand_total = multiplyer * ge2;
+        for(int i = 0; i < Membership_ammount.length;i++){
+            total_cost = total_cost + (Membership_price[i] * tally_ammount[i]);
         }
-        else if(ge_payment_option == 3){
-            int multiplyer = (int)Math.round(days / ge_o3);
-            grand_total = multiplyer * ge3;
-        }
-        else if(ge_payment_option == 4){
-            int multiplyer = (int)Math.round(days / ge_o4);
-            grand_total = multiplyer * ge4;
-        }
-        else if(ge_payment_option == 5){
-            int multiplyer = (int)Math.round(days / ge_o5);
-            grand_total = multiplyer * ge5;
-        }
-        else if(ge_payment_option == 6){
-            int multiplyer = (int)Math.round(days / ge_o6);
-            grand_total = multiplyer * ge6;
-        }
-        
-        System.out.printf("\nIt will cost you %d eagles\n\n", grand_total);
+        System.out.printf("You need to buy the following packs to ensure that you will have the ammount desired in the lowest possible ammount\n%d day pack : %d\n%d day pack : %d\n%d day pack : %d\n%d day pack : %d\n%d day pack : %d\n%d day pack : %d\n\n",Membership_ammount[0],tally_ammount[0],Membership_ammount[1],tally_ammount[1],Membership_ammount[2],tally_ammount[2],Membership_ammount[3],tally_ammount[3],Membership_ammount[4],tally_ammount[4],Membership_ammount[5],tally_ammount[5]);    
+        System.out.printf("The total cost is %d Golden Eagles, Please enter this number into the Function 7 to convert to dollars\n\n", total_cost);
 }
     
     public static void main(String[] args) {
         boolean stop = true;
         while(stop == true){
             Scanner in = new Scanner(System.in);
-            System.out.printf("Please select the option you want to be using:\n[1].Experience conversions\n[2].Silver Lions purchase Recommender\n[3].Premium Membership Pass\n[4].Research Point battle average calculator\n[5].Purchase Cost Calulator\n[6].Lowest possible ammount you need to pay for lions\n[7].Golden Eagle lowest calculator into dollars\n[q].Quit (Is case sensitive)\nPlease Enter response here: ");
+            System.out.printf("Please select the option you want to be using:\n[1].Experience conversions\n[2].Silver Lions purchase Recommender\n[3].Premium Membership Pass\n[4].Research Point battle average calculator\n[5].Budget Cost Calulator\n[6].Cheapest ammount you need to pay for lions\n[7].Golden Eagle lowest calculator into dollars\n[q].Quit (Is case sensitive)\nPlease Enter response here: ");
             String response = in.next();
             response = response.toLowerCase();
             if(response.equals("q")){
@@ -236,7 +210,7 @@ public class golden_egale_conversions {
                 stop = false;
             }
             else if(response.equals("1")){          //Please note that the program can not do equations as a response, tested it and it crashed.
-                System.out.printf("Please enter the ammount of aircraft you need researched: ");
+                System.out.printf("\nPlease enter the ammount of aircraft you need researched: ");
                 int air = in.nextInt();
                 int check = 0;
                 if(air != 1){
@@ -257,12 +231,12 @@ public class golden_egale_conversions {
                 Experience(exp);
             }
             else if(response.equals("2")){
-                System.out.printf("Please enter a desired ammount of Lions you want: ");
+                System.out.printf("\nPlease enter a desired ammount of Lions you want: ");
                 int lions_needed = in.nextInt();
                 silver_lion(lions_needed);
             }
             else if(response.equals("3")){
-                System.out.printf("Please enter the ammount days you want premium: ");
+                System.out.printf("\nPlease enter the ammount days you want premium: ");
                 int days = in.nextInt();
                 Membership(days);
             }
@@ -302,6 +276,10 @@ public class golden_egale_conversions {
             else if(response.equals("5")){                                               // For option six in calculating if you have the right ammount of silver lions for purchasing the aircraft
                 System.out.printf("\nHow many aircraft do you need to purchase before purchasing said aircraft?: ");
                 int air = (int)in.nextInt();                                             // "air" is the # of aircraft being research - 1 for compatibility of the arraylist
+                int check = 0;
+                if(air == 1){
+                    check = 1;
+                }
                 if(air != 1){
                     air--;
                 }
@@ -313,8 +291,10 @@ public class golden_egale_conversions {
                         System.out.printf("What is the first cost value in lions?: ");
                         aircraft_cost.add(in.nextInt());
                     }
+                    if(check != 1){
                     System.out.printf("What's the next cost value in lions?: ");
                     aircraft_cost.add(in.nextInt());
+                    }
                 }
                 lion_cost(aircraft_cost, budget, air);                                        // For requesting the function of calculating if there is enough lions present
             }
