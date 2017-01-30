@@ -1,9 +1,22 @@
+
+/*
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
- *
- * @author Dalton Redman
- * AKA: Unown294
+ * @author Dalton Redman, Dylan
+ * AKA: Unown294, jeff_fan
  */
 public class golden_egale_conversions {
 
@@ -213,10 +226,10 @@ public class golden_egale_conversions {
         boolean stop = true;
         while(stop == true){
             Scanner in = new Scanner(System.in);
-            System.out.printf("Please select the option you want to be using:\n[1].Experience conversions\n[2].Silver Lions purchase Recommender\n[3].Premium Membership Pass\n[4].Research Point battle average calculator\n[5].Purchase Cost Calulator\n[6].Lowest possible ammount you need to pay for lions\n[7].Golden Eagle lowest calculator into dollars\n[q].Quit (Is case sensitive)\nPlease Enter response here: ");
+            System.out.printf("Please select the option you want to be using:\n[1].Experience conversions\n[2].Silver Lions purchase Recommender\n[3].Premium Membership Pass\n[4].Research Point battle average calculator\n[5].Purchase Cost Calulator\n[6].Lowest possible ammount you need to pay for lions\n[7].Golden Eagle lowest calculator into dollars\n[q].Quit \nPlease Enter response here: ");
             String response = in.next();
             response = response.toLowerCase();
-            if(response.equals("q")){
+            if(response.equals("q")||response.equals("Q")){
                 System.out.printf("Exiting...\n");
                 stop = false;
             }
