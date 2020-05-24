@@ -143,10 +143,10 @@ public class golden_egale_conversions {
 }
     
     public static void Lowest_Possible_ge(int Ge){
-    int[] ge_ammount = {25000, 20000, 15000, 10000, 5000, 2500, 1000, 500, 150};
-        int[] ge_price = {115, 95, 72, 49, 25, 15, 6, 3, 1};
-        int[] tally_ammount = {0,0,0,0,0,0,0,0,0};
-        int total_cost = 0;
+    int[] ge_ammount = {25000, 10000, 5000, 2500, 1000, 150};
+        double[] ge_price = {165, 66, 33, 16.5, 6.6, 1};
+        int[] tally_ammount = {0,0,0,0,0,0};
+        double total_cost = 0;
         for(int i = 0; i < ge_ammount.length; i++){
             if(Ge >= ge_ammount[i]){
                 boolean test = true;
@@ -157,25 +157,30 @@ public class golden_egale_conversions {
                     }
                     else{
                         test = false;
+                        if(Ge != 0 && i == 5){
+                            tally_ammount[5]++;
+                            break;
+                        }
                     }
                 }
                     
             }
             else if(Ge==0){
-                
+                //does nothing :D
             }
-            else if(Ge <= 149 && Ge >= 1 && i == 8){
-                tally_ammount[8]++;
-            }
+//            else if(Ge != 0 ){
+//                tally_ammount[5]++;
+//                break;
+//            }
             else{
-                
+                //does nothing :D, Really just to catch weird bugs with the counter. Happens with certain number ranges but havent determined cause
             }
         }
         for(int i = 0; i < ge_ammount.length;i++){
             total_cost = total_cost + (ge_price[i] * tally_ammount[i]);
         }
-        System.out.printf("You need to buy the following packs to ensure that you will have the ammount\nDesired in the lowest possible ammount:\n%d pack : %d\n%d pack : %d\n%d pack : %d\n%d pack : %d\n%d pack : %d\n%d pack : %d\n%d pack : %d\n%d pack : %d\n%d pack : %d\n\n",ge_ammount[0],tally_ammount[0],ge_ammount[1],tally_ammount[1],ge_ammount[2],tally_ammount[2],ge_ammount[3],tally_ammount[3],ge_ammount[4],tally_ammount[4],ge_ammount[5],tally_ammount[5],ge_ammount[6],tally_ammount[6],ge_ammount[7],tally_ammount[7],ge_ammount[8],tally_ammount[8]);    
-        System.out.printf("The total cost is %d Dollars\n\n", total_cost);
+        System.out.printf("You need to buy the following packs to ensure that you will have the ammount\nDesired in the lowest possible ammount:\n%d pack : %d\n%d pack : %d\n%d pack : %d\n%d pack : %d\n%d pack : %d\n%d pack : %d\n\n",ge_ammount[0],tally_ammount[0],ge_ammount[1],tally_ammount[1],ge_ammount[2],tally_ammount[2],ge_ammount[3],tally_ammount[3],ge_ammount[4],tally_ammount[4],ge_ammount[5],tally_ammount[5]);    
+        System.out.printf("The total cost is $%,.2f\n\n", total_cost);
 }
     
     public static void Membership(int days){
@@ -226,23 +231,48 @@ public class golden_egale_conversions {
 }
     
     public static void main(String[] args) {
-        //This is the area that will be updated every patch to keep up with the number of vehicles in the game. This is soly for making sure the vehicle selection is not exceeded in the program
-        int German_aircraft = 92;   // Number of German Aircraft
-        int German_tank = 60;       // Number of German Tanks
-        int US_tank = 45;           // Number of American tanks
-        int US_aircraft = 73;       // Number of American Aircraft
-        int USSR_tank = 58;         // Number of USSR Tanks
-        int USSR_aircraft = 84;     // Number of USSR Aircraft
-        int GB_aircraft = 67;       // Number of Great Britain Aircraft
-        int GB_tank = 36;           // Number of Great Britain Tanks
-        int Japan_tank = 27;        // Number of Japanese Tanks
-        int Japan_aircraft = 65;    // Number of Japanese Aircraft
-        int total_number_vehicles = (German_aircraft + German_tank + US_tank + US_aircraft + USSR_tank + USSR_aircraft + GB_aircraft + GB_tank + Japan_tank + Japan_aircraft);
-        // End of the vehicle number variables beginning of sequence code
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//This is the area that will be updated every patch to keep up with the number of vehicles in the game. This is soly for making sure the vehicle selection is not exceeded in the program
+        int German_aircraft = 101;   // Number of German Aircraft
+        int German_tank = 73;       // Number of German Tanks
+        int German_ship = 32;        // Number of German Ships
+        
+        int US_tank = 63;           // Number of American tanks
+        int US_aircraft = 92;       // Number of American Aircraft
+        int US_ship = 28;            // Number of American Ships
+        
+        int USSR_tank = 78;         // Number of Russian Tanks
+        int USSR_aircraft = 102;     // Number of Russian Aircraft
+        int USSR_ship = 31;          // Number of Russian Ships
+        
+        int GB_aircraft = 83;       // Number of Great Britain Aircraft
+        int GB_tank = 53;           // Number of Great Britain Tanks
+        int GB_ship = 34;            // Number of Great Britain Ships
+        
+        int Japan_tank = 37;        // Number of Japanese Tanks
+        int Japan_aircraft = 77;    // Number of Japanese Aircraft
+        int Japan_ship = 28;         // Number of Japanese Ships
+        
+        int Swedish_tank = 35;       // Number of Swedish Tanks
+        int Swedish_aircraft = 26;   // Number of Swedish Aircraft
+        
+        int China_tank = 39;         // Number of Chinese Tanks
+        int China_aircraft = 42;     // Number of Chinese Aircraft
+        
+        int Italy_tank = 41;         // Number of Italian Tanks
+        int Italy_aircraft = 49;     // Number of Italian Aircraft
+        
+        int France_tank = 45;        // Number of French Tanks
+        int France_aircraft = 48;    // Number of French Aircraft
+        
+        int total_number_vehicles = (German_aircraft + German_tank + German_ship + US_tank + US_aircraft + US_ship + USSR_tank + USSR_aircraft + USSR_ship + GB_aircraft + GB_tank + GB_ship + Japan_tank + Japan_aircraft + Japan_ship + Swedish_tank + Swedish_aircraft + China_tank + China_aircraft + Italy_tank + Italy_aircraft + France_tank + France_aircraft);
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// End of the vehicle number variables beginning of sequence code
+        
         boolean stop = true;
         while(stop == true){
             Scanner in = new Scanner(System.in);
-            System.out.printf("Please select the option you want to be using:\n[1].Experience conversions\n[2].Premium Membership Pass\n[3].Research Point battle average calculator\n[4].Budget Cost Calulator\n[5].Cheapest ammount you need to pay for lions\n[6].Golden Eagle lowest calculator into dollars\n[q].Quit (Is case sensitive)\nPlease Enter response here: ");
+            System.out.printf("Please select the option you want to be using:\n[1].Experience conversions\n[2].Premium Membership Pass Rates\n[3].Average Research Point(RP) Calculatior\n[4].Purchasing Cost Calulator (Silver lions needed)\n[5].Cheapest Eagles to Lion Calculator\n[6].Cheapest Golden Eagle Calculator\n[q].Quit (Is case sensitive)\nPlease Enter response here: ");
             String response = in.next();
             response = response.toLowerCase();
             if(response.equals("q")){
